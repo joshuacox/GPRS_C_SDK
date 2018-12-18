@@ -15,4 +15,4 @@ before_script:
 - docker images
 
 script:
-- docker run -it --name gprs_test /bin/bash /opt/GPRS_CSDTK/.ci/test.sh
+- docker run -it --name gprs_test travistest/gprs_build /bin/bash /opt/GPRS_CSDTK/.ci/test.sh
