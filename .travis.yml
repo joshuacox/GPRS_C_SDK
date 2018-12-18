@@ -1,0 +1,18 @@
+matrix:
+  include:
+    - os: linux
+      dist: xenial
+      sudo: required
+      services:
+      - docker
+
+
+before_install:
+- ls -alh
+- docker build -t travistest/gprs_build .
+
+before_script:
+- docker images
+
+script:
+- docker run -it --name gprs_test /bin/bash /opt/GPRS_CSDTK/.ci/test.sh
